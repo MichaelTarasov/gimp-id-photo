@@ -591,8 +591,10 @@ class id_photo_base(object):
         pdb.gimp_item_set_name(layer, 'Model')
         # Присваиваем значение текущего слоя параметру drawable
         drawable = pdb.gimp_image_get_active_layer(image)
+        
         # Обновляем изображение
         # gimp.displays_flush()
+        
         # Определяем путь к расположению файла-источника:
         f_name = pdb.gimp_image_get_filename(image)
         # Формируем имя файла для сохранения:
