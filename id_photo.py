@@ -270,6 +270,11 @@ class id_photo_base(object):
 
     # Эта функция кадрирует фото в соответствии с переданым ей в качестве аргумента форматом.
     def create_id_foto(self, image, drawable, format, auto_levels):
+        # Инициализируем переменную перед формированием нового имени файла
+        image.filename = ''
+        # Формируем имя сохраняемого файла макета
+        image.filename = image.filename[:-4] + '_' + format['name'] + '.jpg'
+
         # В этом списке хранятся координаты горионтальных направляющих
         hguide_list = []
         # В этом списке хранятся координаты вертикальных направляющих
@@ -581,31 +586,19 @@ class id_photo_base(object):
         # Удаляем слой источник.
         # Он своё дело сделал и теперь может уйти
         image.remove_layer(drawable)
-        
+
         #-------------------------------------
         # М.Тарасов (2016)
         # Сводим изображение
         pdb.gimp_image_flatten(image)
-        # Изменяем название сведённого слоя 
+        # Изменяем название сведённого слоя
         layer = pdb.gimp_image_get_active_layer(image)
         pdb.gimp_item_set_name(layer, 'Model')
         # Присваиваем значение текущего слоя параметру drawable
         drawable = pdb.gimp_image_get_active_layer(image)
-        
-        # Обновляем изображение
-        # gimp.displays_flush()
-        
-        # Определяем путь к расположению файла-источника:
-        f_name = pdb.gimp_image_get_filename(image)
-        # Формируем имя файла для сохранения:
-        # удаляем расширение и точку
-        f_name = f_name[:-4]
-        # модифицируем имя, добавляем точку и расширение jpg
-        f_name = f_name + tmp_dict['name'] + '.jpg'
-        
         # Сохраняем макет в формате jpeg
         if self.data['properties']['save_model']:
-            pdb.file_jpeg_save(image, drawable , f_name, f_name, 0.9, 0, 0, 0, '', 0, 0, 0, 0)
+            pdb.file_jpeg_save(image, drawable , image.filename, image.filename, 0.9, 0, 0, 0, '', 0, 0, 0, 0)
         else:
             pass
         #-------------------------------------
