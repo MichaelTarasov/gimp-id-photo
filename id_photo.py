@@ -595,11 +595,11 @@ class id_photo_base(object):
         # gimp.displays_flush()
         # Определяем путь к расположению файла-источника:
         f_name = pdb.gimp_image_get_filename(image)
-        #Формируем имя файла для сохранения:
+        # Формируем имя файла для сохранения:
         # удаляем расширение и точку
         f_name = f_name[:-4]
         # модифицируем имя, добавляем точку и расширение
-        f_name = f_name + f_name + tmp_dict['name'] + '.jpg'
+        f_name = f_name + tmp_dict['name'] + '.jpg'
         
         # Сохраняем макет в формате jpeg
         if self.data['properties']['save_model']:
