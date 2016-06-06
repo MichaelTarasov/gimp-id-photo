@@ -599,7 +599,7 @@ class id_photo_base(object):
         # удаляем расширение и точку
         f_name = f_name[:-4]
         # модифицируем имя, добавляем точку и расширение
-        f_name = f_name + '_model.jpg'
+        f_name = f_name + f_name + tmp_dict['name'] + '.jpg'
         
         # Сохраняем макет в формате jpeg
         if self.data['properties']['save_model']:
