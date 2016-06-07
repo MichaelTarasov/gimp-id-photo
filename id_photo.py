@@ -273,7 +273,7 @@ class id_photo_base(object):
         # Инициализируем переменную перед формированием нового имени файла
         image.filename = ''
         # Формируем имя сохраняемого файла макета
-        image.filename = image.filename[:-4] + '_' + format['name'] + '.jpg'
+        image.filename = image.filename[:-4] + '(' + format['name'] + ').jpg'
 
         # В этом списке хранятся координаты горионтальных направляющих
         hguide_list = []
