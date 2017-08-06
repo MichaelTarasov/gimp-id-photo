@@ -205,8 +205,8 @@ class id_photo_base(object):
              'name': 'Формат (45 x 60)', 'onlyface': True, 'oval': False, 'overheadheight': 4, 'paper': '10x15',
              'print_photo': False, 'to_grayscale': False, 'width': 45,
              'url': 'http://gimp-id-photo.ru/formats_data/sorry_no_data.html?from=plugin'},
-            {'angle': False, 'category': 'other', 'copys': 4, 'faceheight': 35, 'gray_frame': False, 'height': 120,
-             'name': 'Формат (90 x 120)', 'onlyface': True, 'oval': False, 'overheadheight': 10, 'paper': '10x15',
+            {'angle': False, 'category': 'other', 'copys': 1, 'faceheight': 55, 'gray_frame': False, 'height': 120,
+             'name': 'Формат (90 x 120)', 'onlyface': False, 'oval': False, 'overheadheight': 5, 'paper': '10x15',
              'print_photo': False, 'to_grayscale': False, 'width': 90,
              'url': 'http://gimp-id-photo.ru/formats_data/sorry_no_data.html?from=plugin'}],
         'properties': {'save_model': True,'auto_levels': False, 'resolution': 600, 'white_bg': True}}
